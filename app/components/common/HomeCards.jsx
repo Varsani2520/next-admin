@@ -1,7 +1,17 @@
+"use client";
+
 import React from "react";
 import { SvgIcon } from "@mui/material";
+import CardCharts from "./CardChart";
 
-const HomeCards = ({ fill, title, value, CardIcon }) => {
+const HomeCards = ({
+  fill,
+  title,
+  value,
+  CardIcon,
+  chartOptions,
+  chartSeries,
+}) => {
   return (
     <div>
       <div className="bg-white border p-5 w-auto mx-3 rounded-2xl mb-5">
@@ -28,7 +38,7 @@ const HomeCards = ({ fill, title, value, CardIcon }) => {
                 style={{ width: "24px", height: "24px", color: "white" }}
               />
             </div>
-            <div className="">
+            <div>
               <h1 className="text-gray-500">{title}</h1>
               {/* it will come dynamically from api */}
               <h1 className="font-bold text-3xl">{value}</h1>
@@ -40,9 +50,11 @@ const HomeCards = ({ fill, title, value, CardIcon }) => {
           </div>
         </div>
         {/* Graph */}
-        <div className="border-t-4 mt-4 "></div>
+        <div className="">
+          <CardCharts chartOptions={chartOptions} chartSeries={chartSeries} color={fill}/>
+        </div>
       </div>
-    </div>
+    </div> 
   );
 };
 

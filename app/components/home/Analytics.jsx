@@ -4,32 +4,6 @@ import React from "react";
 import "tailwindcss/tailwind.css";
 import RecentOrdersChart from "../common/RecentOrdersChart";
 
-const data = {
-  labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ],
-  datasets: [
-    {
-      label: "Sales",
-      data: [12, 19, 3, 5, 2, 3, 15, 10, 8, 7, 13, 6],
-      fill: true,
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderColor: "rgba(75, 192, 192, 1)",
-    },
-  ],
-};
-
 const Analytics = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
