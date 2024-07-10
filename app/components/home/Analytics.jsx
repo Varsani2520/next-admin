@@ -30,7 +30,7 @@ const data = {
   ],
 };
 
-const Row2 = () => {
+const Analytics = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -102,4 +102,4 @@ const Row2 = () => {
   );
 };
 
-export default Row2;
+export default Analytics;
