@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
-import SideBar from "./Layouts/SideBar";
-import './globals.css'
-import './style/style.css'
+import "./globals.css";
+import { Grid, Box } from "@mui/material";
+import SideBar from "./Layouts/Sidebar";
+import NavBar from "./Layouts/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +15,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SideBar/>
-        {children}</body>
+        <Grid container className="rootLayout" >
+          <Grid item md={2} xs={12} className="sidebar">
+            <SideBar />
+          </Grid>
+          <Grid item md={9} xs={12} className="content">
+            <Box className="navbar">
+              <NavBar />
+            </Box>
+            <Box className="mainContent">
+              {children}
+            </Box>
+          </Grid>
+        </Grid>
+      </body>
     </html>
   );
 }
