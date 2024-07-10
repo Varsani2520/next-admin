@@ -29,6 +29,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
         <DropDownMenu title={"Ecommerce"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<ShoppingCartOutlinedIcon />} isOpen={isOpen} />
         <DropDownMenu title={"Providers"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<LayersOutlinedIcon />} isOpen={isOpen} />
         <DropDownMenu title={"Services | Category"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<LayersOutlinedIcon />} isOpen={isOpen} />
+        <DropDownMenu title={"Cart"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<UploadFileOutlinedIcon />} isOpen={isOpen} />
         <DropDownMenu title={"Orders"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<UploadFileOutlinedIcon />} isOpen={isOpen} />
         <DropDownMenu title={"Orders Payment"} projectName2={"eShop"} projectName1={"eRequirements"} startIcon={<UploadFileOutlinedIcon />} isOpen={isOpen} />
 

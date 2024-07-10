@@ -1,6 +1,7 @@
 'use client'
 import { Inter } from "next/font/google";
 import "./globals.css";
+import './style/style.css'
 import { Grid, Box } from "@mui/material";
 import SideBar from "./Layouts/Sidebar";
 import NavBar from "./Layouts/Navbar";
