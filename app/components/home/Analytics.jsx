@@ -1,18 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "tailwindcss/tailwind.css";
 import RecentOrdersChart from "../common/RecentOrdersChart";
+import { GetHomeScreen } from "@/app/services/GetHomeScreen";
+import { ApiName } from "@/app/option/config";
 
 const Analytics = () => {
+  const [data, setData] = useState([]);
+
+  async function HomeScreen() {
+    const response = await GetHomeScreen();
+    console.log("response from api ", response);
+    setData(response.top_categories);
+  }
+
+  useEffect(() => {
+    HomeScreen();
+  }, [ApiName]);
+
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-4 rounded-2xl">
-            <div className="flex justify-between">
-                <h1 className="text-xl font-bold mx-5 mt-2">Recent Orders</h1>
-                <a href="#" className="text-blue-500">View all</a>  
-            </div>
+          <div className="flex justify-between">
+            <h1 className="text-xl font-bold mx-5 mt-2">Recent Orders</h1>
+            <a href="#" className="text-blue-500">
+              View all
+            </a>
+          </div>
           <RecentOrdersChart />
         </div>
 
@@ -27,24 +43,38 @@ const Analytics = () => {
           {/* List of products */}
           <ul>
             {/* Example product */}
-            <li className="flex justify-between items-center mb-4">
-              <div className="flex items-center">
-                <img
-                  src="https://via.placeholder.com/40"
-                  alt="Product"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div className="ml-4">
-                  <p className="text-gray-800 font-bold">Product Name</p>
-                  <p className="text-gray-500">100 Items</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-gray-800 font-bold">-15%</p>
-                <p className="text-gray-500">$27.00</p>
-              </div>
-            </li>
-            {/* Repeat similar items */}
+            {data &&
+              data.map((product) => (
+                <li className="flex justify-between items-center mb-4">
+                  <div className="flex items-center">
+                    <img
+                      src={
+                        product.banner_image
+                          ? product.banner_image
+                          : "https://via.placeholder.com/40"
+                      }
+                      alt="Product"
+                      className="w-10 h-10 rounded-full"
+                    />
+                    <div className="ml-4">
+                      <p className="text-gray-800 font-bold">
+                        {product.title ? product.title : "Product Name"}
+                      </p>
+                      <p className="text-gray-500">100 Items</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-800 font-bold">
+                      {product.discount ? "-" + product.discount : "-15%"}
+                    </p>
+                    <p className="text-gray-500">
+                      {product.discounted_price
+                        ? "$" + product.discounted_price
+                        : "$27.00"}
+                    </p>
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
 
