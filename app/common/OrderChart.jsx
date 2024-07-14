@@ -1,45 +1,61 @@
 "use client";
 
-import React from "react";
-import ReactApexChart from "react-apexcharts";
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const OrderChart = ({ series }) => {
-  const options = {
-    chart: {
-      height: 350,
-      type: "area",
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-    },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-    },
-    tooltip: {
-      x: {
-        format: "dd/MM/yy HH:mm",
+  const [options, setOptions] = useState(null);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setOptions({
+      chart: {
+        height: 350,
+        type: "area",
       },
-    },
-  };
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      xaxis: {
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+      },
+      tooltip: {
+        x: {
+          format: "dd/MM/yy HH:mm",
+        },
+      },
+    });
+  }, []);
+
+  if (!options || !hasMounted) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <ReactApexChart
         options={options}
         series={series}
