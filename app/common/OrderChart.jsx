@@ -42,11 +42,6 @@ const OrderChart = ({ series }) => {
           "Dec",
         ],
       },
-      tooltip: {
-        x: {
-          format: "dd/MM/yy HH:mm",
-        },
-      },
     });
   }, []);
 
