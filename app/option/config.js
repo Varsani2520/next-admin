@@ -3,6 +3,6 @@
 export const ApiName = process.browser
   ? localStorage.getItem("ApiName")
     ? localStorage.getItem("ApiName")
-    : "eRequirement"
+    : "ERequirement"
   : null;
 export const WebName = "Partner";
