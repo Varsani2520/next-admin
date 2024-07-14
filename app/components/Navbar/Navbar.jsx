@@ -1,27 +1,27 @@
+"use client";
+
 import Poligon from "@/app/common/Poligon";
 import { WebName } from "@/app/option/config";
 import {
   ChatOutlined,
+  MenuOutlined,
   DarkModeOutlined,
   LanguageOutlined,
-  MenuOutlined,
-  NotificationsOutlined,
   SettingsOutlined,
+  NotificationsOutlined,
 } from "@mui/icons-material";
 import { Avatar, Divider, IconButton } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
+  const [settingMenu, setSettingMenu] = useState(false);
+
   return (
     <div>
       <div className="navbar flex justify-between px-2 items-center bg-white p-5">
         {/* title - web */}
         <div className="title flex items-center gap-4">
-          <div className="md:hidden">
-            <Poligon fill={"#000"} text={WebName.slice(0, 1)} />
-            <h1 className="font-bold text-2xl">{WebName}</h1>
-          </div>
-          <IconButton>
+          <IconButton onClick={() => toggleSidebar()}>
             <MenuOutlined />
           </IconButton>
           <input
