@@ -1,8 +1,11 @@
 import React from 'react'
+import Overview from './Overview'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Overview />
+    </div>
   )
 }
 
