@@ -14,7 +14,7 @@ const OverviewCards = ({
 }) => {
   return (
     <div>
-      <div className="bg-white border p-8 w-auto mx-3 rounded-2xl mb-5">
+      <div className="bg-white border p-8 w-auto mx-2 rounded-2xl mb-5">
         <div className="flex justify-between items-center">
           <div className="flex gap-2">
             <div className="relative flex items-center justify-center">

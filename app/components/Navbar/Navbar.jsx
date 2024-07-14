@@ -54,7 +54,7 @@ const Navbar = ({ toggleSidebar }) => {
 
           <Divider className="ml-4" orientation="vertical" flexItem />
 
-          <IconButton className="animate-spin ml-4 mr-2">
+          <IconButton className="animate-spin pr-4">
             <SettingsOutlined className="h-8 w-8" />
           </IconButton>
         </div>

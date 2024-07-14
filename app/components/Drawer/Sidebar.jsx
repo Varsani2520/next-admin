@@ -5,8 +5,8 @@ import Routes from "./Routes";
 
 const Sidebar = () => {
   return (
-    <div className="bg-white">
-      <div className="flex  p-4 gap-3 items-center">
+    <div className="bg-white overflow-y-auto">
+      <div className="flex p-4 gap-3 items-center">
         <Poligon fill={"#000"} text={WebName.slice(0, 1)} />
         <h1 className="font-bold text-2xl">{WebName}</h1>
       </div>
