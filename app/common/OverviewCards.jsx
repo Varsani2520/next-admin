@@ -2,9 +2,9 @@
 
 import React from "react";
 import { SvgIcon } from "@mui/material";
-import CardCharts from "./CardChart";
+// import CardCharts from "./CardChart";
 
-const HomeCards = ({
+const OverviewCards = ({
   fill,
   title,
   value,
@@ -14,7 +14,7 @@ const HomeCards = ({
 }) => {
   return (
     <div>
-      <div className="bg-white border p-5 w-auto mx-3 rounded-2xl mb-5">
+      <div className="bg-white border p-8 w-auto mx-2 rounded-2xl mb-5">
         <div className="flex justify-between items-center">
           <div className="flex gap-2">
             <div className="relative flex items-center justify-center">
@@ -50,12 +50,16 @@ const HomeCards = ({
           </div>
         </div>
         {/* Graph */}
-        <div className="">
-          <CardCharts chartOptions={chartOptions} chartSeries={chartSeries} color={fill}/>
-        </div>
+        {/* <div className="">
+          <CardCharts
+            chartOptions={chartOptions}
+            chartSeries={chartSeries}
+            color={fill}
+          />
+        </div> */}
       </div>
-    </div> 
+    </div>
   );
 };
 
-export default HomeCards;
+export default OverviewCards;

@@ -1,1 +1,4 @@
-export const ApiName = localStorage.getItem("ApiName");
+// config.js
+
+export const ApiName = process.browser ? localStorage.getItem("ApiName") : null;
+export const WebName = "Partner"

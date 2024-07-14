@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import HomeCards from "../common/HomeCards";
+import OverviewCards from "../../common/OverviewCards.jsx";
 import {
   AttachMoney,
   LocalMallOutlined,
@@ -27,9 +27,9 @@ const chartSeries = [
 const Overview = () => {
   return (
     <div>
-      <Grid container className="px-2">
+      <Grid container className="">
         <Grid item xs={12} md={3}>
-          <HomeCards
+          <OverviewCards
             fill={"#22C55E"}
             title={"Total Sales"}
             value={"$35,000"}
@@ -39,7 +39,7 @@ const Overview = () => {
           />
         </Grid>
         <Grid item xs={12} md={3}>
-          <HomeCards
+          <OverviewCards
             fill={"#FF5200"}
             title={"Total Income"}
             value={"$37,802"}
@@ -49,7 +49,7 @@ const Overview = () => {
           />
         </Grid>
         <Grid item xs={12} md={3}>
-          <HomeCards
+          <OverviewCards
             fill={"#CBD5E1"}
             title={"Orders Paid"}
             value={"$35,000"}
@@ -59,7 +59,7 @@ const Overview = () => {
           />
         </Grid>
         <Grid item xs={12} md={3}>
-          <HomeCards
+          <OverviewCards
             fill={"#2377FC"}
             title={"Total Visitors"}
             value={"34,780"}
