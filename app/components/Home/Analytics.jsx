@@ -65,6 +65,7 @@ const Analytics = () => {
                 count={Math.ceil(data.length / itemsPerPage)}
                 page={currentPage} // 1 PAGE
                 variant="text"
+                color="primary"
                 onChange={handlePageChange}
               />
             </div>
