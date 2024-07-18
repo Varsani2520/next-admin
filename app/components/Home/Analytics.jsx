@@ -41,6 +41,10 @@ const Analytics = () => {
     currentPage * itemsPerPage
   );
 
+  function ProviderClicked(provider) {
+    localStorage.setItem("provider", JSON.stringify(provider));
+  }
+
   return (
     <div className="">
       <Grid container>
@@ -55,7 +59,13 @@ const Analytics = () => {
             <Grid container className="mt-2">
               {displayedData &&
                 displayedData.map((provider) => (
-                  <Grid item xs={12} md={4} key={provider.id}>
+                  <Grid
+                    item
+                    xs={12}
+                    md={4}
+                    key={provider.id}
+                    onClick={() => ProviderClicked(provider)}
+                  >
                     <ProviderCard provider={provider} />
                   </Grid>
                 ))}
