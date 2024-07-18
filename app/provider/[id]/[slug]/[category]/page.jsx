@@ -6,6 +6,11 @@ import ProviderLayout from "../ProviderLayout";
 import General from "@/app/components/Provider/General";
 import { GetHomeScreen } from "@/app/services/GetHomeScreen";
 import Company from "@/app/components/Provider/Company";
+import Bookings from "@/app/components/Provider/Bookings";
+import Offers from "@/app/components/Provider/Offers";
+import Services from "@/app/components/Provider/Services";
+import Reviews from "@/app/components/Provider/Reviews";
+import Payments from "@/app/components/Provider/Payments";
 
 const page = () => {
   const [providerInfo, setProviderInfo] = useState([]);
@@ -37,11 +42,11 @@ const page = () => {
     <ProviderLayout>
       {category == "general" && <General provider={providerInfo} />}
       {category == "company" && <Company provider={providerInfo} />}
-      {category == "services" && <h1>Services</h1>}
-      {category == "bookings" && <h1>Bookings</h1>}
-      {category == "offers" && <h1>Promo Codes</h1>}
-      {category == "reviews" && <h1>Reviews</h1>}
-      {category == "payments" && <h1>Payment</h1>}
+      {category == "services" && <Services provider={providerInfo} />}
+      {category == "bookings" && <Bookings provider={providerInfo} />}
+      {category == "offers" && <Offers provider={providerInfo} />}
+      {category == "reviews" && <Reviews provider={providerInfo} />}
+      {category == "payments" && <Payments provider={providerInfo} />}
     </ProviderLayout>
   );
 };
