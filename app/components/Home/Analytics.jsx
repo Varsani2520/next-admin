@@ -42,7 +42,7 @@ const Analytics = () => {
   );
 
   function ProviderClicked(provider) {
-    localStorage.setItem("provider", JSON.stringify(provider));
+    localStorage.setItem("provider", JSON.stringify([provider]));
   }
 
   return (
