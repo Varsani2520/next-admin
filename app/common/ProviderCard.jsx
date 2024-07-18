@@ -3,7 +3,7 @@ import React from "react";
 
 const ProviderCard = ({ provider }) => {
   return (
-    <Link href={`/provider/${provider.id}/${provider.slug}`}>
+    <Link href={`/provider/${provider.id}/${provider.slug}/general`}>
       <div className="p-4 border border-gray-200 rounded-2xl items-center flex flex-col m-2">
         <div className="img">
           <img
