@@ -10,30 +10,30 @@ export const WebName = "Partner";
 export const providerRoutes = [
   {
     name: "General",
-    url: "",
+    url: "general",
   },
   {
     name: "Company",
-    url: "",
+    url: "company",
   },
   {
     name: "Services",
-    url: "",
+    url: "services",
   },
   {
     name: "Bookings",
-    url: "",
+    url: "bookings",
   },
   {
     name: "Offers",
-    url: "",
+    url: "offers",
   },
   {
     name: "Reviews",
-    url: "",
+    url: "reviews",
   },
   {
     name: "Booking Payment",
-    url: "",
+    url: "payments",
   },
 ];
