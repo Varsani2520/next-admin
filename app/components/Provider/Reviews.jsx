@@ -9,7 +9,7 @@ const Reviews = ({ provider }) => {
       <div className="review-card p-5 m-2 bg-gray-600 rounded-2xl">
         <h1 className="text-xl font-semibold text-white">Reviews</h1>
         <Grid container>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className="flex justify-center">
             <div className="flex flex-col justify-center bg-white rounded-full aspect-square p-16 mt-4 w-[200px] h-[200px] items-center">
               <Star />
               <h1 className="text-2xl font-bold text-yellow-400">
