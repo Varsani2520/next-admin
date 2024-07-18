@@ -1,7 +1,5 @@
 "use client";
 
-import Poligon from "@/app/common/Poligon";
-import { WebName } from "@/app/option/config";
 import {
   ChatOutlined,
   MenuOutlined,
@@ -10,28 +8,37 @@ import {
   SettingsOutlined,
   NotificationsOutlined,
 } from "@mui/icons-material";
-import { Avatar, Divider, IconButton } from "@mui/material";
+import { Avatar, Box, Divider, Drawer, IconButton } from "@mui/material";
 import React, { useState } from "react";
+import Sidebar from "../Drawer/Sidebar";
 
 const Navbar = ({ toggleSidebar }) => {
   const [settingMenu, setSettingMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <div>
       <div className="navbar flex justify-between px-2 items-center bg-white p-5">
         {/* title - web */}
         <div className="title flex items-center gap-4">
-          <IconButton onClick={() => toggleSidebar()}>
-            <MenuOutlined />
-          </IconButton>
-          <input
-            type="text"
-            className=" p-4 w-[800px] border border-gray-200 rounded-md"
-            placeholder="search here... "
-          />
+          <Box display={{ xs: "none", md: "block" }}>
+            <IconButton onClick={() => toggleSidebar()}>
+              <MenuOutlined />
+            </IconButton>
+            <input
+              type="text"
+              className=" p-4 w-[800px] border border-gray-200 rounded-md"
+              placeholder="search here... "
+            />
+          </Box>
+          <Box display={{ xs: "block", md: "none" }}>
+            <IconButton onClick={() => setOpenMenu(true)}>
+              <MenuOutlined />
+            </IconButton>
+          </Box>
         </div>
         {/* right - icons */}
-        <div className="flex justify-end gap-5 items-center">
+        <div className="flex justify-end gap-2 md:gap-5 items-center">
           <IconButton className="bg-gray-200">
             <LanguageOutlined />
           </IconButton>
@@ -46,7 +53,7 @@ const Navbar = ({ toggleSidebar }) => {
           </IconButton>
           <div className="flex gap-2">
             <Avatar />
-            <div className="">
+            <div className="hidden sm:block">
               <h1 className="text-sm">UserName</h1>
               <p className="text-sm">admin</p>
             </div>
@@ -59,6 +66,9 @@ const Navbar = ({ toggleSidebar }) => {
           </IconButton>
         </div>
       </div>
+      <Drawer open={openMenu} onClose={() => setOpenMenu(false)}>
+        <Sidebar />
+      </Drawer>
     </div>
   );
 };

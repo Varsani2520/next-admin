@@ -2,7 +2,7 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-import './style/style.css';
+import "./style/style.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
@@ -21,7 +21,12 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <Grid container>
-          <Grid item xs={12} md={burgerMenu ? 2 : 0} display={burgerMenu ? "block" : "none"}>
+          <Grid
+            item
+            xs={12}
+            md={burgerMenu ? 2 : 0}
+            display={{ xs: "none", md: burgerMenu ? "block" : "none" }}
+          >
             <Sidebar />
           </Grid>
           <Grid item xs={12} md={burgerMenu ? 10 : 12}>
