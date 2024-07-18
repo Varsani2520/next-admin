@@ -7,7 +7,10 @@ const General = ({ provider }) => {
     <div className="p-2">
       {provider &&
         provider.map((SingleProvider) => (
-          <ProviderDetails SingleProvider={SingleProvider} />
+          <ProviderDetails
+            key={SingleProvider.id}
+            SingleProvider={SingleProvider}
+          />
         ))}
     </div>
   );

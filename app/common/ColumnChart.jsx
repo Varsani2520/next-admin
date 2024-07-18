@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const ColumnChart = () => {
-  const [chartOptions, setChartOptions] = useState({});
+  const [chartOptions, setChartOptions] = useState(null);
   const [chartSeries, setChartSeries] = useState([]);
 
   useEffect(() => {
@@ -15,12 +15,13 @@ const ColumnChart = () => {
     setChartOptions({
       chart: {
         type: "bar",
+        height: 350,
       },
       plotOptions: {
         bar: {
           horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
+          columnWidth: '55%',
+          endingShape: 'rounded',
         },
       },
       dataLabels: {
@@ -29,27 +30,14 @@ const ColumnChart = () => {
       stroke: {
         show: true,
         width: 2,
-        colors: ["transparent"],
+        colors: ['transparent'],
       },
       xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ],
+        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
       },
       yaxis: {
         title: {
-          text: "Revenue (thousands)",
+          text: '$ (thousands)',
         },
       },
       fill: {
@@ -66,22 +54,27 @@ const ColumnChart = () => {
 
     setChartSeries([
       {
-        name: "Net Revenue",
-        data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 67, 72, 78],
+        name: 'Net Profit',
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
       },
       {
-        name: "Gross Revenue",
-        data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 102, 111, 120],
+        name: 'Revenue',
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
       },
       {
-        name: "Profit",
-        data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 60, 55, 65],
+        name: 'Free Cash Flow',
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
       },
     ]);
   }, []);
 
+  // Ensure the component only renders in the browser
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   return (
-    <div className="column-chart">
+    <div className="column-chart bg-white rounded-md" id="chart">
       {chartOptions && chartSeries.length > 0 && (
         <ApexCharts
           options={chartOptions}

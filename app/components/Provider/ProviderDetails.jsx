@@ -32,7 +32,7 @@ const ProviderDetails = ({ SingleProvider }) => {
           </div>
         </Grid>
         <Grid item xs={12} md={6}>
-          <div className="info border p-2 mx-2 rounded-2xl">
+          <div className="info border p-2 mx-2 rounded-2xl bg-white">
             <div className="flex items-center gap-2">
               <h1 className="text-xl py-2 font-bold">{SingleProvider.title}</h1>
               {SingleProvider.verified && <Verified color="primary" />}
