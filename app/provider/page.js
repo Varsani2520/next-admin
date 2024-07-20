@@ -60,10 +60,7 @@ const Page = () => {
 
   return (
     <>
-      <Heading
-        heading="Providers"
-        breadcrumbs={[{ label: "Dashboard", href: "/dashboard" }]}
-      />
+     
       <Box p={2} className="bg-white my-4 rounded-md">
         <Box mb={2} display="flex" alignItems="center" gap={1} flexWrap="wrap">
           <CustomButton title="ALL" color="info" variant="outlined" />
@@ -91,6 +88,7 @@ const Page = () => {
             startIcon={<AddCircleOutlineRoundedIcon />}
             title="Add Provider"
             variant="contained"
+            href="/provider/add_provider"
             sx={{ height: "40px" }}
           />
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
