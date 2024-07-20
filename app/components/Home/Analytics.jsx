@@ -21,6 +21,7 @@ const Analytics = () => {
   async function GetHomeScreenData() {
     try {
       const response = await GetHomeScreen();
+      console.log("ressponse 1" , response)
       setData(response.top_categories);
       console.log("response", response);
     } catch (error) {

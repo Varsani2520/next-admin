@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
-const BreadCrumb = ({ title, url, redirectReq, secondtitle, secondurl }) => {
+const BreadCrumb = ({ title, url, redirectReq, secondtitle, secondurl, First }) => {
   return (
     <div className="flex">
       <Link className="text-gray-500" href={"/"}>
-        Home
+        {First ? First : "Home"}
       </Link>
       <span className="mx-1">/</span>
       {secondtitle && (
