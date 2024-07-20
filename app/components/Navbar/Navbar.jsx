@@ -11,6 +11,7 @@ import {
 import { Avatar, Box, Divider, Drawer, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../Drawer/Sidebar";
+import Settings from "../Drawer/Settings";
 
 const Navbar = ({ toggleSidebar }) => {
   const [settingMenu, setSettingMenu] = useState(false);
@@ -61,13 +62,19 @@ const Navbar = ({ toggleSidebar }) => {
 
           <Divider className="ml-4" orientation="vertical" flexItem />
 
-          <IconButton className="animate-spin mr-4">
+          <IconButton
+            onClick={() => setSettingMenu(true)}
+            className="animate-spin mr-4"
+          >
             <SettingsOutlined className="h-8 w-8" />
           </IconButton>
         </div>
       </div>
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)}>
         <Sidebar />
+      </Drawer>
+      <Drawer open={settingMenu} anchor="right" onClose={() => setSettingMenu(false)}>
+        <Settings />
       </Drawer>
     </div>
   );
