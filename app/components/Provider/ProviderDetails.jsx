@@ -20,11 +20,11 @@ const ProviderDetails = ({ SingleProvider }) => {
                 alt=""
               />
             </div>
-            <div className="img">
+            <div className="img h-[300px]">
               <img
                 src={SingleProvider.banner_image}
-                height={"300px"}
-                className="rounded-2xl h-[300px] object-cover"
+                height={"100%"}
+                className="rounded-2xl  object-cover"
                 width={"100%"}
                 alt=""
               />
