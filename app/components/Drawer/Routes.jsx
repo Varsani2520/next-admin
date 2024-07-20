@@ -26,7 +26,7 @@ const Routes = () => {
 
       <NavigationLink
         icon={<SettingsOutlined />}
-        target={"/"}
+        target={"/provider"}
         title={"Providers"}
       />
       <NavigationLink

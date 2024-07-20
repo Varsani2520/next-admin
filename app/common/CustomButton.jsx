@@ -9,7 +9,7 @@ const CustomButton = ({
     startIcon,
     endIcon,
     style,
-    className,
+    className,href,
     title }) => {
     // Define valid color options
     const validColors = ['default', 'inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning']
@@ -22,7 +22,7 @@ const CustomButton = ({
             size={size}
             startIcon={startIcon}
             endIcon={endIcon}
-            style={style}
+            style={style}href={href}
         >{title}
         </Button>
     )
