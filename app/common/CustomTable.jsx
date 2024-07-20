@@ -31,10 +31,18 @@ const CustomTable = ({ columns, rows }) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
-        <TableHead sx={{ background: "#f2f1f6", fontWeight: 'bold' }}>
+        <TableHead>
           <TableRow>
             {columns.map((column) => (
-              <TableCell key={column.field}>{column.headerName}</TableCell>
+              <TableCell
+                key={column.field}
+                sx={{
+                  backgroundColor: "#f2f1f6", 
+                  fontWeight: 'bold',        
+                }}
+              >
+                {column.headerName}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>

@@ -54,7 +54,6 @@ const Page = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -65,14 +64,8 @@ const Page = () => {
         heading="Providers"
         breadcrumbs={[{ label: "Dashboard", href: "/dashboard" }]}
       />
-      <Box p={2}>
-        <Box
-          mb={2}
-          display="flex"
-          alignItems="center"
-          gap={1}
-          flexWrap="wrap"
-        >
+      <Box p={2} className="bg-white my-4 rounded-md">
+        <Box mb={2} display="flex" alignItems="center" gap={1} flexWrap="wrap">
           <CustomButton title="ALL" color="info" variant="outlined" />
           <CustomButton title="Approved" color="success" variant="outlined" />
           <CustomButton title="Disapproved" color="error" variant="outlined" />
@@ -100,11 +93,7 @@ const Page = () => {
             variant="contained"
             sx={{ height: "40px" }}
           />
-          <Menu
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-          >
+          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleClose}>Filter Option 1</MenuItem>
             <MenuItem onClick={handleClose}>Filter Option 2</MenuItem>
           </Menu>
