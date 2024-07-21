@@ -36,7 +36,7 @@ const Routes = () => {
       />
       <NavigationLink
         icon={<ShoppingCartOutlined />}
-        target={"/"}
+        target={"/cart"}
         title={"Cart"}
       />
       <NavigationLink

@@ -75,14 +75,14 @@ const ProviderDetails = ({ SingleProvider }) => {
             <OverviewCards
               fill={"#22C55E"}
               title={"Total Sales"}
-              value={"$35,000"}
+              value={`$${SingleProvider.total_sale}`}
             />
           </div>
           <div className="col-span-6">
             <OverviewCards
               fill={"#FF5200"}
               title={"Total Income"}
-              value={"$37,802"}
+              value={`$${SingleProvider.total_income}`}
             />
           </div>
         </Grid>

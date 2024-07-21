@@ -1,12 +1,12 @@
-import React from 'react'
-import Heading from '@/app/common/Heading'
-const layout = ({children}) => {
+import React from "react";
+import Heading from "@/app/common/Heading";
+const layout = ({ children }) => {
   return (
     <div>
-        <Heading heading="Provider"/>
+      <Heading heading="All Providers" />
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
