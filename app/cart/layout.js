@@ -4,7 +4,10 @@ import BreadCrumb from "../common/BreadCrumb";
 const layout = ({ children }) => {
   return (
     <div>
-      <BreadCrumb title={"Cart"} />
+      <div className="bg-white mt-4 p-4 rounded-2xl">
+        <h1 className="font-bold text-2xl">Cart</h1>
+        <BreadCrumb title={"Cart"} />
+      </div>
       <div className="mt-2">{children}</div>
     </div>
   );
