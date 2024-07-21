@@ -1,7 +1,6 @@
 "use client"; // Page Component
 
 import React, { useEffect, useState } from "react";
-import Heading from "../common/Heading";
 import CustomTable from "../common/CustomTable";
 import { GetHomeScreen } from "../services/GetHomeScreen";
 import { useParams } from "next/navigation";
@@ -13,7 +12,6 @@ import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRou
 
 const Page = () => {
   const [providerInfo, setProviderInfo] = useState([]);
-  const { id, category } = useParams();
 
   async function GetProvider() {
     const response = await GetHomeScreen();
@@ -60,7 +58,6 @@ const Page = () => {
 
   return (
     <>
-     
       <Box p={2} className="bg-white my-4 rounded-md">
         <Box mb={2} display="flex" alignItems="center" gap={1} flexWrap="wrap">
           <CustomButton title="ALL" color="info" variant="outlined" />
@@ -70,18 +67,18 @@ const Page = () => {
             placeholder="Search..."
             variant="outlined"
             size="small"
-            sx={{ height: "40px" }}
+            className={"h-[40px]"}
           />
           <CustomButton
             startIcon={<FilterListIcon />}
             variant="outlined"
-            sx={{ height: "40px" }}
+            className={"h-[40px]"}
           />
           <CustomButton
             startIcon={<DownloadIcon />}
             title="Download"
             variant="outlined"
-            sx={{ height: "40px" }}
+            className={"h-[40px]"}
           />
           <Box flexGrow={1} />
           <CustomButton
@@ -89,7 +86,7 @@ const Page = () => {
             title="Add Provider"
             variant="contained"
             href="/provider/add_provider"
-            sx={{ height: "40px" }}
+            className={"h-[40px] bg-green-500 hover:bg-green-600"}
           />
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleClose}>Filter Option 1</MenuItem>
