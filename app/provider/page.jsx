@@ -9,6 +9,7 @@ import CustomButton from "../common/CustomButton";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import DownloadIcon from "@mui/icons-material/Download";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
+import CustomMenu from "../common/CustomMenu";
 
 const Page = () => {
   const [providerInfo, setProviderInfo] = useState([]);
@@ -48,13 +49,7 @@ const Page = () => {
     { field: "operation", headerName: "Operation" },
   ];
 
-  // For dropdown menu
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <>
@@ -74,12 +69,19 @@ const Page = () => {
             variant="outlined"
             className={"h-[40px]"}
           />
-          <CustomButton
-            startIcon={<DownloadIcon />}
-            title="Download"
-            variant="outlined"
-            className={"h-[40px]"}
-          />
+          <CustomMenu
+            title={"Download"}
+            firstItem={"PDF"}
+            secondItem={"Excel"}
+            thirdItem={"CSV"}
+          >
+            <CustomButton
+              startIcon={<DownloadIcon />}
+              title="Download"
+              variant="outlined"
+              className={"h-[40px]"}
+            />
+          </CustomMenu>
           <Box flexGrow={1} />
           <CustomButton
             startIcon={<AddCircleOutlineRoundedIcon />}
@@ -88,10 +90,7 @@ const Page = () => {
             href="/provider/add_provider"
             className={"h-[40px] bg-green-500 hover:bg-green-600"}
           />
-          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <MenuItem onClick={handleClose}>Filter Option 1</MenuItem>
-            <MenuItem onClick={handleClose}>Filter Option 2</MenuItem>
-          </Menu>
+        
         </Box>
         <CustomTable columns={columns} rows={providerInfo} />
       </Box>

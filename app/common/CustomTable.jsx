@@ -10,18 +10,27 @@ import Avatar from '@mui/material/Avatar'; // Import Avatar from Material-UI
 
 const CustomTable = ({ columns, rows }) => {
   const renderCellContent = (column, row) => {
-    if (column.field === 'profile') {
+    if (column.field === 'profile' || column.field === "Image") {
+      const isRounded = column.field === 'profile';
+
       return (
         <div className="flex items-center">
           <Avatar
-            src={row.profile.imageUrl} // Assuming imageUrl is part of profile
+            src={row.profile.imageUrl}
             alt={row.profile.name}
-            sx={{ width: 40, height: 40, marginRight: 2 }}
+            sx={{
+              width: isRounded?40:50,
+              height: isRounded?40:50,
+              marginRight: 2,
+              borderRadius: isRounded ? '50%' : '2px',
+            }}
           />
-          <div>
-            <div>{row.profile.name}</div>
-            <div>{row.profile.email}</div> {/* Assuming email is part of profile */}
-          </div>
+          {column.field === 'profile' && (
+            <div>
+              <div>{row.profile.name}</div>
+              <div>{row.profile.email}</div> 
+            </div>
+          )}
         </div>
       );
     }
