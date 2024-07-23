@@ -54,7 +54,7 @@ const Routes = () => {
 
       <NavigationLink
         icon={<RectangleOutlined />}
-        target={"/"}
+        target={"/sliders"}
         title={"Sliders"}
       />
       <NavigationLink
