@@ -3,13 +3,15 @@ import { ERequirement, EShop } from "../option/httpAxios";
 
 export async function GetHomeScreen() {
   try {
-    if (ApiName == "ERequirement") {
-      const response = await ERequirement.get("/get-home-screen-data");
-      return response.data;
+    let response;
+    if (ApiName === "ERequirement") {
+      response = await ERequirement.get("/get-home-screen-data");
+    } else {
+      response = await EShop.get("/home-screen-data");
     }
-    const response = await EShop.get("/home-screen-data");
     return response.data;
   } catch (error) {
-    console.log("Error in getting Data", error);
+    console.error("Error in getting Data", error);
+    throw error; 
   }
 }
